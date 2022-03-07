@@ -14,7 +14,7 @@ const Navigation = () => {
   const screenOptions = {
     headerShown: false
   }
-
+  // Landonique
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions} >

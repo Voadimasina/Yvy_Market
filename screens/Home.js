@@ -8,8 +8,7 @@ import Body from '../components/Home/Body'
 
 const Home = () => {
   return (
-    <LinearGradient colors={["#a8ff78","#78ffd6"]} style={[StyleSheet.absoluteFill]} >
-        <SafeAreaView style={{ flex:1,}}>
+        <SafeAreaView style={{ flex:1, backgroundColor: "#dddddf"}}>
             {/* Header */}
             <Header />
 
@@ -19,7 +18,6 @@ const Home = () => {
             {/* Footer */}
             <Footer />
         </SafeAreaView>
-    </LinearGradient>
   )
 }
 

@@ -32,7 +32,8 @@ function Content({item}) {
                 resizeMode: 'contain',
                 width: "100%",
                 height: "100%",
-            }}/>
+                }}
+            />
         </View>
         <TouchableOpacity style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', borderRadius: 100, borderWidth: 1, backgroundColor: "#78ffd6", marginHorizontal: 20, marginVertical: 10, borderColor:"#78ffd6",}} >
             <Ionicons name="add-circle-outline" size={30} colors="#DA22FF" />

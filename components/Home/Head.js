@@ -1,9 +1,11 @@
 import { View, Text, Image, TouchableOpacity} from 'react-native'
-import React from 'react'
-import { BlurView } from 'expo-blur'
+import React, {useContext}  from 'react'
+import {userContext} from './../../Navigation'
+//import { BlurView } from 'expo-blur'
 
 
 const Head = () => {
+    const user = useContext(userContext)
   return (
     <View style={{
         height: 50, 
@@ -32,19 +34,22 @@ const Head = () => {
         <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}} >
             <Text style={{fontSize: 20, fontWeight:'700'}}>YVY Market</Text>
         </View>
-        <TouchableOpacity intensity={70} style={{justifyContent:"center", alignItems: "center", padding: 10, width: 80, height: 80, borderRadius: 20}} >
-            <View>
-                <Image 
-                    source={require('./../../media/icons/avatarIcon.png')}
-                    style={{
-                        width: 40,
-                        height: 40,
-                        resizeMode: 'contain'
-                    }}
-                    />
-            </View>
-            {/* <Text style={{textAlign: 'center', fontSize: 10, fontWeight: 'bold' }}>Annie RALAIVAO</Text> */}
-        </TouchableOpacity>
+        { user ? 
+            <TouchableOpacity intensity={70} style={{justifyContent:"center", alignItems: "center", padding: 10, width: 80, height: 80, borderRadius: 20}} >
+                <View>
+                    <Image 
+                        source={{uri : user.photoURL}}
+                        style={{
+                            width: 40,
+                            height: 40,
+                            resizeMode: 'contain'
+                        }}
+                        />
+                </View>
+                {/* <Text style={{textAlign: 'center', fontSize: 10, fontWeight: 'bold' }}>Annie RALAIVAO</Text> */}
+            </TouchableOpacity> : 
+            <></>
+        }
     </View>
   )
 }
